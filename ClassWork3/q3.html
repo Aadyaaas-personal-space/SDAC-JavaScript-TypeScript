@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Email:
+    <input type="text" name="" id="email"><br>
+
+    Password
+    <input type="text" name="" id="password"><br>
+
+    Query:
+    <input type="text" name="" id="query"><br>
+
+    <button id="button">Submit</button>
+</body>
+
+<script>
+    const button = document.getElementById("button")
+    button.addEventListener("click", () => {
+        const email = document.getElementById("email").value
+        const emailReg = /^[^@\s]+@[^@\s]+\.[^@\s]+$/
+
+        const password = document.getElementById("password").value
+        const passReg = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[A-Za-z\d]{8,}$/
+
+        const query = document.getElementById("query").value
+
+        if (!emailReg.test(email)) {
+            alert("Enter VAlid Mail")
+        }
+        else if (!passReg.test(password)) {
+            alert("Enter valid password")
+        }
+
+        else if (query.length < 10) {
+            alert("Enter valid Query")
+        }
+
+        else {
+            alert("Okk...")
+        }
+    })
+</script>
+
+</html>

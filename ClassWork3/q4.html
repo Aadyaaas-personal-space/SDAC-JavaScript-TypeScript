@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    Product Name :
+    <input type="text" name="" id="name"><br>
+
+    price :
+    <input type="number" name="" id="price"><br>
+
+    <button id="button">Submit</button>
+
+
+    <script>
+        const button = document.getElementById("button")
+        button.addEventListener("click", () => {
+            const name = document.getElementById("name").value
+            const price = document.getElementById("price").value
+
+            const nameReg = /^[A-Za-z\s]+$/
+
+            if (!nameReg.test(name)) {
+                alert("Enter valid Name")
+            } else if (price <= 0) {
+                alert("enter valid > then 0")
+            }
+            else {
+                alert("Okk...")
+            }
+        })
+    </script>
+</body>
+
+</html>
